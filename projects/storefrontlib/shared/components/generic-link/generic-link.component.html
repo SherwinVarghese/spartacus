@@ -26,6 +26,7 @@
     [attr.class]="class"
     [attr.style]="style"
     [attr.title]="title"
+    (click)="toggleHamburgerMenuOnSameRouter()"
   >
     <ng-container *ngTemplateOutlet="content"></ng-container>
   </a>

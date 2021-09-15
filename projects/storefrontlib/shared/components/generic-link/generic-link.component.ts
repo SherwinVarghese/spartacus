@@ -1,5 +1,6 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { Params, Router } from '@angular/router';
+import { HamburgerMenuService } from './../../../layout/header/hamburger-menu/hamburger-menu.service';
 
 // private
 interface RouteParts {
@@ -21,7 +22,7 @@ interface RouteParts {
   templateUrl: './generic-link.component.html',
 })
 export class GenericLinkComponent implements OnChanges {
-  constructor(protected router: Router) {}
+  constructor(protected router: Router, protected hamburgerService: HamburgerMenuService) {}
 
   /**
    * Pattern matching string starting with `http://` or `https://`.
@@ -54,6 +55,19 @@ export class GenericLinkComponent implements OnChanges {
    */
   isExternalUrl(): boolean {
     return typeof this.url === 'string' && this.PROTOCOL_REGEX.test(this.url);
+  }
+
+  /**
+   * Toggle the hamburger menu on mobile view when selecting a router link that is currently open.
+   */
+  toggleHamburgerMenuOnSameRouter(): void {
+    if (
+        this.router.url.includes(this.url.toString()) &&
+        this.hamburgerService.isExpanded.value
+      )
+        {
+      //this.hamburgerService.toggle(true);
+    }
   }
 
   get rel() {
