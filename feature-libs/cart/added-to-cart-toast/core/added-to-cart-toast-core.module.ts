@@ -7,4 +7,4 @@ import { defaultAddedToCartToastConfig } from '../default-added-to-cart-toast-co
   imports: [CommonModule],
   providers: [provideDefaultConfig(defaultAddedToCartToastConfig)],
 })
-export class AddedToCartToastCoreMdule {}
+export class AddedToCartToastCoreModule {}
