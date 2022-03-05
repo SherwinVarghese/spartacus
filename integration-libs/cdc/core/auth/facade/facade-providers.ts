@@ -7,5 +7,5 @@ export const facadeProviders: Provider[] = [
   {
     provide: CdcAuthFacade,
     useExisting: CdcAuthService,
-  },
+  }
 ];

@@ -11,7 +11,7 @@ import { LoginFormComponentService } from 'feature-libs/user/account/components/
 import { CdcJsService } from 'integration-libs/cdc/root';
 import { FormErrorsModule } from 'projects/storefrontlib/shared';
 import { of } from 'rxjs';
-import { CdcLoginComponentService } from './cdc-login.service';
+import { CdcLoginComponentService } from './cdc-user-login.service';
 import createSpy = jasmine.createSpy;
 
 class MockWinRef {

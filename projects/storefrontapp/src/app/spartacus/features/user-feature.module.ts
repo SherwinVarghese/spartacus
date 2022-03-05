@@ -2,19 +2,19 @@ import { NgModule } from '@angular/core';
 import { CmsConfig, I18nConfig, provideConfig } from '@spartacus/core';
 import {
   userAccountTranslationChunksConfig,
-  userAccountTranslations,
+  userAccountTranslations
 } from '@spartacus/user/account/assets';
 import {
   UserAccountRootModule,
-  USER_ACCOUNT_FEATURE,
+  USER_ACCOUNT_FEATURE
 } from '@spartacus/user/account/root';
 import {
   userProfileTranslationChunksConfig,
-  userProfileTranslations,
+  userProfileTranslations
 } from '@spartacus/user/profile/assets';
 import {
   UserProfileRootModule,
-  USER_PROFILE_FEATURE,
+  USER_PROFILE_FEATURE
 } from '@spartacus/user/profile/root';
 
 @NgModule({
@@ -39,6 +39,12 @@ import {
     provideConfig(<CmsConfig>{
       featureModules: {
         [USER_PROFILE_FEATURE]: {
+          dependencies: [
+            () =>
+            import('@spartacus/cdc/root').then((m) => m.CdcUserRegisterModule),
+            () =>
+            import('@spartacus/cdc/root').then((m) => m.CdcUserLoginModule),
+          ],
           module: () =>
             import('@spartacus/user/profile').then((m) => m.UserProfileModule),
         },
