@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
-import { S4omComponentsModule } from './components/s4om-components.module';
-
+import { ScheduleLinesModule } from './root/components/schedule-lines/schedule-lines.module';
 @NgModule({
   declarations: [],
-  imports: [S4omComponentsModule],
+  imports: [ScheduleLinesModule],
 })
 export class S4omModule {}
