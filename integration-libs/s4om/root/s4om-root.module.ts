@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
-import { CartOutlets } from 'feature-libs/cart/base/root';
-import { provideOutlet, OutletPosition } from 'projects/storefrontlib/cms-structure';
+import { CartOutlets } from '@spartacus/cart/base/root';
+import { OutletPosition, provideOutlet } from '@spartacus/storefront';
 import { ScheduleLinesComponent } from './components/schedule-lines/schedule-lines.component';
 //import { ScheduleLinesModule } from './components/schedule-lines/schedule-lines.module';
 
